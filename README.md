@@ -11,7 +11,7 @@ struct User {
 const Construction = requrie("construction");
 const t = Construction.types;
 
-const User = new Construction({
+const User = new Construction("LE", {
 	age: t.UInt8;
 	favouriteNumber: t.Int32
 });
