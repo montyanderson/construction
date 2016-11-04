@@ -3,7 +3,7 @@
 ``` C
 struct User {
 	uint8_t age;
-	int32 favouriteNumber;
+	int32_t favouriteNumber;
 }
 ```
 
