@@ -1,5 +1,7 @@
 "use strict";
 
+const types = require("./lib/types.js");
+
 class Construction {
 	constructor() {
 		if(typeof arguments[0] == "string") {
@@ -32,10 +34,7 @@ class Construction {
 		for(let key in this.struct) {
 			const type = this.struct[key];
 
-			let func = "write" + type.name;
-			if(type.size > 1) func += this.endianness;
-
-			buf[func](obj[key], offset);
+			type["write" + this.endianness].call(buf, obj[key], offset);
 			offset += type.size;
 		}
 
@@ -48,10 +47,7 @@ class Construction {
 		for(let key in this.struct) {
 			const type = this.struct[key];
 
-			let func = "read" + type.name;
-			if(type.size > 1) func += this.endianness;
-
-			obj[key] = buf[func](offset);
+			obj[key] = type["read" + this.endianness].call(buf, offset);
 			offset += type.size;
 		}
 
@@ -59,20 +55,7 @@ class Construction {
 	}
 };
 
-Construction.types = {};
+Construction.types = types;
 
-[
-	"Int8",
-	"Int16",
-	"Int32",
-	"UInt8",
-	"UInt16",
-	"UInt32"
-].map(name => {
-	Construction.types[name] = {
-		name,
-		size: parseInt(name.replace(/^\D+/g, "")) / 8
-	};
-});
 
 module.exports = Construction;
