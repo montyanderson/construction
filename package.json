@@ -1,6 +1,6 @@
 {
   "name": "construction",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Interface with binary structures in Javascript, built for network protocols.",
   "main": "index.js",
   "scripts": {
