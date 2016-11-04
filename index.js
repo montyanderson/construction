@@ -1,3 +1,5 @@
+"use strict";
+
 class Construction {
 	constructor() {
 		if(typeof arguments[0] == "string") {
