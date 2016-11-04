@@ -1,4 +1,4 @@
-class construction {
+class Construction {
 	constructor() {
 		if(typeof arguments[0] == "string") {
 			this.endianness = arguments[0];
@@ -57,7 +57,7 @@ class construction {
 	}
 };
 
-construction.types = {};
+Construction.types = {};
 
 [
 	"Int8",
@@ -67,10 +67,10 @@ construction.types = {};
 	"UInt16",
 	"UInt32"
 ].map(name => {
-	construction.types[name] = {
+	Construction.types[name] = {
 		name,
 		size: parseInt(name.replace(/^\D+/g, "")) / 8
 	};
 });
 
-module.exports = construction;
+module.exports = Construction;
