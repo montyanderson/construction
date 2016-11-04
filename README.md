@@ -2,6 +2,8 @@
 
 Interface with binary structures in Javascript, built for network protocols.
 
+[![Build Status](https://travis-ci.org/montyanderson/construction.svg?branch=master)](https://travis-ci.org/montyanderson/construction) [![npm version](https://badge.fury.io/js/construction.svg)](https://badge.fury.io/js/construction)
+
 ``` C
 struct User {
 	uint8_t age;
