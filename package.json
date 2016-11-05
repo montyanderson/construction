@@ -1,7 +1,7 @@
 {
   "name": "construction",
   "version": "0.0.2",
-  "description": "Interface with binary structures in Javascript, built for network protocols.",
+  "description": ":construction: Interface with binary structures in Javascript, built for network protocols.",
   "main": "index.js",
   "scripts": {
     "test": "ava test.js --verbose"
